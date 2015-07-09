@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
    get "homes/index"
+    devise_for :users do
+      get 'sign_out' => 'devise/session#destroy'
+  end
  # resources :homes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
